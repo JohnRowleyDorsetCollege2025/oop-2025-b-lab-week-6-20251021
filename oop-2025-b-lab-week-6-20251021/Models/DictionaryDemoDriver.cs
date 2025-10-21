@@ -11,6 +11,7 @@ namespace oop_2025_b_lab_week_6_20251021.Models
         public static void Run()
         {
             CapitalCities();
+            FruitCounts();
         }
 
         public static void CapitalCities()
@@ -26,6 +27,38 @@ namespace oop_2025_b_lab_week_6_20251021.Models
             {
                 Console.WriteLine($"{entry.Key} -> {entry.Value}");
             }
+        }
+
+        public static void FruitCounts()
+        {
+            Dictionary<string, int> fruitBasket = new Dictionary<string, int>
+        {
+            { "apple", 2 },
+            { "orange", 3 }
+        };
+
+            // Incoming list of fruits (e.g., someone adds these to the basket)
+            List<string> incomingFruits = new List<string> { "apple", "banana", "apple", "orange", "banana", "kiwi" };
+
+            // Update the dictionary counts
+            foreach (string fruit in incomingFruits)
+            {
+                if (fruitBasket.ContainsKey(fruit))
+                {
+                    fruitBasket[fruit]++;
+                }
+                else
+                {
+                    fruitBasket[fruit] = 1;
+                }
+            }
+
+            // Display updated fruit counts
+            foreach (var kvp in fruitBasket)
+            {
+                Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+            }
+
         }
     }
 }
