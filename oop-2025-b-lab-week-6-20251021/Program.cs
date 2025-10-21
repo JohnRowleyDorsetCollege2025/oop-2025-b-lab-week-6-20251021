@@ -30,3 +30,5 @@ Console.WriteLine($"The sum of numbers between 1 and 100 is {counter}");
 SimpleCheckoutDriver.Run();
 
 ComplexCheckoutDriver.Run();
+
+DictionaryDemoDriver.Run();
